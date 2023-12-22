@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:story360/controller/logInCon.dart';
 
-class LogIn extends StatelessWidget {
+class LogIn extends StatefulWidget {
   const LogIn({super.key});
+
+  @override
+  State<LogIn> createState() => _LogInState();
+}
+
+class _LogInState extends State<LogIn> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +54,7 @@ class LogIn extends StatelessWidget {
                   color: Colors.white,
                 ),
                 child: TextField(
+                  controller: emailController,
                   decoration: InputDecoration(
                     labelText: 'Email',
                     border: OutlineInputBorder(),
@@ -60,6 +70,7 @@ class LogIn extends StatelessWidget {
                   color: Colors.white,
                 ),
                 child: TextField(
+                  controller: passwordController,
                   decoration: InputDecoration(
                     labelText: 'Password',
                     border: OutlineInputBorder(),
@@ -73,7 +84,9 @@ class LogIn extends StatelessWidget {
                   width: double.infinity,
                   height: 48.0,
                   child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        login(emailController.text, passwordController.text);
+                      },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
                           Color(0xFFE8B2A6),
