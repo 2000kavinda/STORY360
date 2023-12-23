@@ -23,18 +23,27 @@ class _LogInState extends State<LogIn> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image(
-                image: AssetImage('assets/login.png'),
-                width: double.infinity,
-              ),
-              Text(
-                "Login your Journey",
-                style: TextStyle(
-                  fontFamily: 'Nunito Sans',
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF95796A),
-                ),
+              Stack(
+                children: [
+                  Image(
+                    image: AssetImage('assets/login.png'),
+                    width: double.infinity,
+                  ),
+                  Positioned(
+                    bottom: 20.0,
+                    left: 0,
+                    right: 0,
+                    child: Text(
+                      "Login your Journey",
+                      style: TextStyle(
+                        fontFamily: 'Nunito Sans',
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF95796A),
+                      ),
+                    ),
+                  ),
+                ],
               ),
               Text(
                 "Document your life, reflect on your journey.",
@@ -71,6 +80,7 @@ class _LogInState extends State<LogIn> {
                 ),
                 child: TextField(
                   controller: passwordController,
+                  obscureText: true,
                   decoration: InputDecoration(
                     labelText: 'Password',
                     border: OutlineInputBorder(),
@@ -78,14 +88,17 @@ class _LogInState extends State<LogIn> {
                 ),
               ),
               SizedBox(
-                height: 30.0,
+                height: 40.0,
               ),
               Container(
                   width: double.infinity,
                   height: 48.0,
                   child: ElevatedButton(
                       onPressed: () {
-                        login(emailController.text, passwordController.text);
+                        login(emailController.text, passwordController.text,
+                            context);
+                        emailController.clear();
+                        passwordController.clear();
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(

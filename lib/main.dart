@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:story360/view/logIn.dart';
+import 'package:story360/view/splashScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: LogIn(),
+      debugShowCheckedModeBanner: false,
+      home: Splash(),
     );
   }
 }
