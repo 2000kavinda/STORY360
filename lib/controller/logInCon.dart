@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:story360/view/storyListing.dart';
 
 void login(String email, String password, BuildContext context) async {
-  final String url =
+  const String url =
       'http://app360dev-001-site17.atempurl.com/api/Interview/SignIn';
 
   Response<Map<String, dynamic>> response = await Dio().post(
@@ -22,6 +22,7 @@ void login(String email, String password, BuildContext context) async {
         response.data?['content']?['profilePicture'] ?? 'DefaultProfile';
     int pid = response.data?['content']?['id'] ?? -1;
 
+    // ignore: use_build_context_synchronously
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -34,18 +35,20 @@ void login(String email, String password, BuildContext context) async {
   } else {
     // Handle non-200 status code
 
+    // ignore: use_build_context_synchronously
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Login Error'),
-          content: Text('Failed to log in. Please check your credentials.'),
+          title: const Text('Login Error'),
+          content:
+              const Text('Failed to log in. Please check your credentials.'),
           actions: [
             ElevatedButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('OK'),
+              child: const Text('OK'),
             ),
           ],
         );

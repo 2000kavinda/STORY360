@@ -5,7 +5,7 @@ class tdCard extends StatelessWidget {
   final int date;
   final String month;
 
-  tdCard({required this.name, required this.date, required this.month});
+  const tdCard({required this.name, required this.date, required this.month});
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +13,11 @@ class tdCard extends StatelessWidget {
     return Container(
       width: size.width / 8,
       height: 91.0,
-      margin: EdgeInsets.all(7.0),
+      margin: const EdgeInsets.all(7.0),
       decoration: BoxDecoration(
-        color: Color(0xFFE8B2A6),
+        color: const Color(0xFFE8B2A6),
         border: Border.all(
-          color: Color(0xFFE8B2A6),
+          color: const Color(0xFFE8B2A6),
           width: 2.0,
         ),
         borderRadius: BorderRadius.circular(18.0),
@@ -26,8 +26,8 @@ class tdCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            '$name',
-            style: TextStyle(
+            name,
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 12.0,
               fontFamily: 'Product Sans',
@@ -35,7 +35,7 @@ class tdCard extends StatelessWidget {
           ),
           Text(
             '$date',
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 24.0,
               fontFamily: 'Product Sans',
@@ -43,8 +43,8 @@ class tdCard extends StatelessWidget {
             ),
           ),
           Text(
-            '$month',
-            style: TextStyle(
+            month,
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 12.0,
               fontFamily: 'Product Sans',

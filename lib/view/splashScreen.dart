@@ -17,33 +17,33 @@ class _SplashState extends State<Splash> {
 
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => LogIn()));
+          context, MaterialPageRoute(builder: (context) => const LogIn()));
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFFEFE9),
+      backgroundColor: const Color(0xFFFFEFE9),
       body: Padding(
-        padding: EdgeInsets.all(30),
+        padding: const EdgeInsets.all(30),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 60.0,
               ),
-              Image(
+              const Image(
                 image: AssetImage('assets/logo.png'),
                 height: 267.0,
                 width: double.infinity,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30.0,
               ),
-              Text(
+              const Text(
                 "🙂The Journey",
                 style: TextStyle(
                   fontFamily: 'Nunito Sans',
@@ -52,10 +52,10 @@ class _SplashState extends State<Splash> {
                   color: Color(0xFF95796A),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15.0,
               ),
-              Text(
+              const Text(
                 "Document your life, reflect on your journey.",
                 style: TextStyle(
                   fontFamily: 'Nunito Sans',

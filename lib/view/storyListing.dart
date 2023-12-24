@@ -83,13 +83,13 @@ class _StoryListingState extends State<StoryListing> {
           backgroundColor: Colors.transparent,
           elevation: 0,
           child: Container(
-            padding: EdgeInsets.all(20.0),
+            padding: const EdgeInsets.all(20.0),
             width: double.infinity,
             height: double.infinity,
             decoration: ShapeDecoration(
               color: Colors.white,
               shape: RoundedRectangleBorder(
-                side: BorderSide(color: Color(0xFFFFEFE9), width: 8.0),
+                side: const BorderSide(color: Color(0xFFFFEFE9), width: 8.0),
                 borderRadius: BorderRadius.circular(16.0),
               ),
             ),
@@ -102,37 +102,37 @@ class _StoryListingState extends State<StoryListing> {
                       Navigator.of(context).pop();
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xFFE8B2A6),
-                      minimumSize: Size(47, 47),
+                      primary: const Color(0xFFE8B2A6),
+                      minimumSize: const Size(47, 47),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0),
                       ),
                     ),
-                    child: Row(
+                    child: const Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(Icons.arrow_back_ios),
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20.0,
                   ),
                   Text(
                     date,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Color(0xFF7C7C7C),
                       fontSize: 16,
                       fontFamily: 'Roboto',
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30.0,
                   ),
                   Text(
                     title,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Color(0xFF292929),
                       fontSize: 18,
                       fontFamily: 'Sarabun',
@@ -141,7 +141,7 @@ class _StoryListingState extends State<StoryListing> {
                   ),
                   Text(
                     description,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Color(0xFF292929),
                       fontSize: 18,
                       fontFamily: 'Sarabun',
@@ -191,7 +191,7 @@ class _StoryListingState extends State<StoryListing> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 CircleAvatar(
                   backgroundColor: Colors.brown,
                   backgroundImage: NetworkImage(widget.profile),
@@ -200,20 +200,20 @@ class _StoryListingState extends State<StoryListing> {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(
-                        color: Color(0xFFE8B2A6),
+                        color: const Color(0xFFE8B2A6),
                         width: 5.0,
                       ),
                     ),
                   ),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       '$greeting,',
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Color(0xFF371B34),
                         fontSize: 14,
                         fontWeight: FontWeight.normal,
@@ -221,7 +221,7 @@ class _StoryListingState extends State<StoryListing> {
                     ),
                     Text(
                       widget.name + '!',
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Color(0xFFE8B2A6),
                         fontSize: 26,
                         fontFamily: 'Epilogue',
@@ -245,34 +245,34 @@ class _StoryListingState extends State<StoryListing> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     tdCard(
-                      name: '$name',
+                      name: name,
                       date: DateTime.now().day,
                       month: '$tdm',
                     ),
                     card(
                       name: '$day1',
-                      date: DateTime.now().add(Duration(days: 1)).day,
-                      month: '$d1',
+                      date: DateTime.now().add(const Duration(days: 1)).day,
+                      month: d1,
                     ),
                     card(
-                      name: '$day2',
-                      date: DateTime.now().add(Duration(days: 2)).day,
-                      month: '$d2',
+                      name: day2,
+                      date: DateTime.now().add(const Duration(days: 2)).day,
+                      month: d2,
                     ),
                     card(
-                      name: '$day3',
-                      date: DateTime.now().add(Duration(days: 3)).day,
-                      month: '$d3',
+                      name: day3,
+                      date: DateTime.now().add(const Duration(days: 3)).day,
+                      month: d3,
                     ),
                     card(
-                      name: '$day4',
-                      date: DateTime.now().add(Duration(days: 4)).day,
-                      month: '$d4',
+                      name: day4,
+                      date: DateTime.now().add(const Duration(days: 4)).day,
+                      month: d4,
                     ),
                     card(
-                      name: '$day5',
-                      date: DateTime.now().add(Duration(days: 5)).day,
-                      month: '$d5',
+                      name: day5,
+                      date: DateTime.now().add(const Duration(days: 5)).day,
+                      month: d5,
                     ),
                   ],
                 ),
@@ -286,10 +286,11 @@ class _StoryListingState extends State<StoryListing> {
               onRefresh: getData,
               child: SingleChildScrollView(
                 child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 16.0),
+                  margin: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: GridView.builder(
                     shrinkWrap: true,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       crossAxisSpacing: 8.0,
                       mainAxisSpacing: 8.0,
@@ -297,8 +298,8 @@ class _StoryListingState extends State<StoryListing> {
                     itemBuilder: (BuildContext context, int index) {
                       return Card(
                         child: Container(
-                          padding: EdgeInsets.all(15.0),
-                          color: Color(0xFFFFF2E7),
+                          padding: const EdgeInsets.all(15.0),
+                          color: const Color(0xFFFFF2E7),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: SingleChildScrollView(
@@ -309,7 +310,7 @@ class _StoryListingState extends State<StoryListing> {
                                     visible: false,
                                     child: Text(
                                       jsonList[index]['createdDate'],
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -317,13 +318,13 @@ class _StoryListingState extends State<StoryListing> {
                                   ),
                                   Text(
                                     jsonList[index]['title'],
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
                                       fontFamily: 'Product Sans',
                                     ),
                                   ),
-                                  SizedBox(height: 8),
+                                  const SizedBox(height: 8),
                                   Visibility(
                                     visible: true,
                                     child: InkWell(
@@ -336,7 +337,7 @@ class _StoryListingState extends State<StoryListing> {
                                       },
                                       child: Text(
                                         jsonList[index]['description'],
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontSize: 12,
                                           fontFamily: 'Product Sans',
                                         ),
@@ -360,13 +361,13 @@ class _StoryListingState extends State<StoryListing> {
           Align(
             alignment: Alignment.bottomRight,
             child: Container(
-              margin: EdgeInsets.only(bottom: 16.0, right: 16.0),
+              margin: const EdgeInsets.only(bottom: 16.0, right: 16.0),
               child: FloatingActionButton(
                 onPressed: () {
                   // Add your onPressed logic here
                 },
                 child: Icon(Icons.add),
-                backgroundColor: Color(0xFFE8B2A6),
+                backgroundColor: const Color(0xFFE8B2A6),
               ),
             ),
           )

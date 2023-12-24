@@ -13,11 +13,11 @@ class card extends StatelessWidget {
     return Container(
       width: size.width / 8,
       height: 91.0,
-      margin: EdgeInsets.all(7.0),
+      margin: const EdgeInsets.all(7.0),
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
-          color: Color(0xFFE8B2A6),
+          color: const Color(0xFFE8B2A6),
           width: 2.0,
         ),
         borderRadius: BorderRadius.circular(18.0),
@@ -26,8 +26,8 @@ class card extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            '$name',
-            style: TextStyle(
+            name,
+            style: const TextStyle(
               color: Color(0xFFE8B2A6),
               fontSize: 12.0,
               fontFamily: 'Product Sans',
@@ -35,7 +35,7 @@ class card extends StatelessWidget {
           ),
           Text(
             '$date',
-            style: TextStyle(
+            style: const TextStyle(
               color: Color(0xFFE8B2A6),
               fontSize: 24.0,
               fontFamily: 'Product Sans',
@@ -43,8 +43,8 @@ class card extends StatelessWidget {
             ),
           ),
           Text(
-            '$month',
-            style: TextStyle(
+            month,
+            style: const TextStyle(
               color: Color(0xFFE8B2A6),
               fontSize: 12.0,
               fontFamily: 'Product Sans',

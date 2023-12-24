@@ -15,7 +15,7 @@ class _LogInState extends State<LogIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFFEFE9),
+      backgroundColor: const Color(0xFFFFEFE9),
       body: Padding(
         padding: EdgeInsets.all(30),
         child: SingleChildScrollView(
@@ -23,7 +23,7 @@ class _LogInState extends State<LogIn> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Stack(
+              const Stack(
                 children: [
                   Image(
                     image: AssetImage('assets/login.png'),
@@ -45,7 +45,7 @@ class _LogInState extends State<LogIn> {
                   ),
                 ],
               ),
-              Text(
+              const Text(
                 "Document your life, reflect on your journey.",
                 style: TextStyle(
                   fontFamily: 'Nunito Sans',
@@ -54,40 +54,40 @@ class _LogInState extends State<LogIn> {
                   color: Color(0xFF5B240B),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20.0,
               ),
               Container(
                 height: 48.0,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                 ),
                 child: TextField(
                   controller: emailController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Email',
                     border: OutlineInputBorder(),
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20.0,
               ),
               Container(
                 height: 48.0,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                 ),
                 child: TextField(
                   controller: passwordController,
                   obscureText: true,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Password',
                     border: OutlineInputBorder(),
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40.0,
               ),
               Container(
@@ -102,10 +102,10 @@ class _LogInState extends State<LogIn> {
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                          Color(0xFFE8B2A6),
+                          const Color(0xFFE8B2A6),
                         ),
                       ),
-                      child: Text('Login')))
+                      child: const Text('Login')))
             ],
           ),
         ),
